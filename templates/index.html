@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atajos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h4 id="message" style="align-content: center;"></h4>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+
+
+
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <button type="button" id="save" class="btn btn-success" onclick="sendData(this)" name="save">
+                            <h2>Save </h2>
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" id="copy" class="btn btn-primary" onclick="sendData(this)" name="copy">
+                            <h2>Copy</h2>
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" id="paste" class="btn btn-warning" onclick="sendData(this)" name="paste">
+                            <h2>Paste</h2>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <button type="button" id="space" class="btn btn-warning" onclick="sendData(this)" name="space">
+                            <h2>&nbsp; &nbsp;&nbsp;&nbsp; Space&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" id="enter" class="btn btn-danger" onclick="sendData(this)" name="enter">
+                            <h2>&nbsp; &nbsp;&nbsp;&nbsp; ENTER&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <form action="http://192.168.1.125:5000/" method="post">
+            <p>Enter Name:</p>
+            <p><input type="text" name="key" /></p>
+            <p><input type="submit" value="Subir" /></p>
+        </form> -->
+</body>
+<script>
+
+    URL = "http://192.168.1.125:5000/"
+    URL_LOCAL = "http://127.0.0.1:5000/"
+    function sendData(params) {
+        //console.log(params)
+        keyToSend = params.attributes.name.nodeValue
+        console.log(keyToSend)
+        $.post(URL, { key: keyToSend }, function (result) {
+            console.log(result)
+            document.getElementById('message').textContent = result.message
+        });
+    }
+
+</script>
+
+</html>

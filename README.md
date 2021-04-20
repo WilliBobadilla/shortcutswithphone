@@ -23,6 +23,24 @@ Estos atajos de teclados son basicamente pensados en las personas zurdas, que us
 git clone https://github.com/WilliBobadilla/shortcutswithphone
 ```
 
+2. Entrar en la carpeta de la repo:
+
+```bash
+cd shortcutswithphone
+```
+
+3. Crear un entorno virtual:
+
+```bash
+python3 -m venv env
+```
+
+4. Activar el entorno Virtual:
+
+```bash
+source env/bin/activate
+```
+
 ## License :page_facing_up:
 
 Copyright 2021 Williams Bobadilla

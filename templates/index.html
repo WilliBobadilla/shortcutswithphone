@@ -69,21 +69,15 @@
                 </div>
             </div>
         </div>
-        <!-- <form action="http://192.168.1.125:5000/" method="post">
-            <p>Enter Name:</p>
-            <p><input type="text" name="key" /></p>
-            <p><input type="submit" value="Subir" /></p>
-        </form> -->
+
 </body>
 <script>
 
-    URL = "http://192.168.1.125:5000/"
-    URL_LOCAL = "http://127.0.0.1:5000/"
     function sendData(params) {
         //console.log(params)
         keyToSend = params.attributes.name.nodeValue
         console.log(keyToSend)
-        $.post(URL, { key: keyToSend }, function (result) {
+        $.post("/", { key: keyToSend }, function (result) {
             console.log(result)
             document.getElementById('message').textContent = result.message
         });

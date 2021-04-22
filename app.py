@@ -7,12 +7,12 @@ ip_address = socket.gethostbyname(hostname)
 port = 5000
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/*": {"origins": "*"}}, support_credentials=True)
 app.config['CORS_HEADERS'] = 'Content-Type'
 keyboard = Controller()
 
 
-@cross_origin()
+@cross_origin(supports_credentials=True)
 @app.route('/', methods=['POST', 'GET'])
 def hello():
 
@@ -48,6 +48,7 @@ def hello():
 
         return jsonify(message=message)
     else:
+
         return render_template('index.html', ip=ip_address, port=port)
 
 

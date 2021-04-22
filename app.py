@@ -1,15 +1,21 @@
 from pynput.keyboard import Key, Controller
 from flask import Flask, request, render_template, json, jsonify
 from flask_cors import CORS,  cross_origin
+import socket
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+port = 5000
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 keyboard = Controller()
 
 
-@app.route('/', methods=['POST', 'GET'])
 @cross_origin()
+@app.route('/', methods=['POST', 'GET'])
 def hello():
+
     if request.method == 'POST':
         data = request.form['key']
         print('value sent: ', data)
@@ -42,8 +48,9 @@ def hello():
 
         return jsonify(message=message)
     else:
-        return render_template('index.html')
+        return render_template('index.html', ip=ip_address, port=port)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, )  # host='0.0.0.0', port=80)
+    print("YOUR IP: ", ip_address, ":", port)
+    app.run(debug=True, host='0.0.0.0', port=port)

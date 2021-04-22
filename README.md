@@ -41,7 +41,19 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-.... to continue
+5. Instalar los requerimientos:
+
+```bash
+pip install -r requirements.txt
+```
+
+6. setear como script principal a app.py
+
+```bash
+FLASK_APP=app.py
+```
+
+7. Correr el server
 
 ## License :page_facing_up:
 

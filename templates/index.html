@@ -26,54 +26,50 @@
         <div class="row">
             <div class="col-sm">
                 <h4 id="message" style="align-content: center;"></h4>
+            </div>
+            <div class="col-sm-8">
+                <p style="align-content: center;"> Connect from your phone to: {{ ip }}:{{port}}, you must be in the
+                    same network </p>
 
             </div>
         </div>
+
+
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-
-
-
-                    <br><br>
+                    <button type="button" id="save" class="btn btn-success" onclick="sendData(this)" name="save">
+                        <h2>Save </h2>
+                    </button>
+                </div>
+                <div class="col-sm">
+                    <button type="button" id="copy" class="btn btn-primary" onclick="sendData(this)" name="copy">
+                        <h2>Copy</h2>
+                    </button>
+                </div>
+                <div class="col-sm">
+                    <button type="button" id="paste" class="btn btn-warning" onclick="sendData(this)" name="paste">
+                        <h2>Paste</h2>
+                    </button>
                 </div>
             </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <button type="button" id="save" class="btn btn-success" onclick="sendData(this)" name="save">
-                            <h2>Save </h2>
-                        </button>
-                    </div>
-                    <div class="col-sm">
-                        <button type="button" id="copy" class="btn btn-primary" onclick="sendData(this)" name="copy">
-                            <h2>Copy</h2>
-                        </button>
-                    </div>
-                    <div class="col-sm">
-                        <button type="button" id="paste" class="btn btn-warning" onclick="sendData(this)" name="paste">
-                            <h2>Paste</h2>
-                        </button>
-                    </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <button type="button" id="space" class="btn btn-warning" onclick="sendData(this)" name="space">
+                        <h2>&nbsp; &nbsp;&nbsp;&nbsp; Space&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button type="button" id="enter" class="btn btn-danger" onclick="sendData(this)" name="enter">
+                        <h2>&nbsp; &nbsp;&nbsp;&nbsp; ENTER&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                    </button>
                 </div>
             </div>
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-5">
-                        <button type="button" id="space" class="btn btn-warning" onclick="sendData(this)" name="space">
-                            <h2>&nbsp; &nbsp;&nbsp;&nbsp; Space&nbsp;&nbsp;&nbsp;&nbsp; </h2>
-                        </button>
-                    </div>
-                    <div class="col-6">
-                        <button type="button" id="enter" class="btn btn-danger" onclick="sendData(this)" name="enter">
-                            <h2>&nbsp; &nbsp;&nbsp;&nbsp; ENTER&nbsp;&nbsp;&nbsp;&nbsp; </h2>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- <form action="http://192.168.1.125:5000/" method="post">
+        </div>
+        <!-- <form action="http://192.168.1.125:5000/" method="post">
             <p>Enter Name:</p>
             <p><input type="text" name="key" /></p>
             <p><input type="submit" value="Subir" /></p>

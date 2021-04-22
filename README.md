@@ -1,4 +1,4 @@
-# Atajos de teclado :keyboard: (Documentacion en proceso) :rocket:
+# Atajos de teclado :keyboard: :rocket:
 
 Estos atajos de teclados son basicamente pensados en las personas zurdas, que usan el mouse con la zurda, debido a que copiar, pegar, guardar son un poco tediosas y tambíenn el control que queda a la derecha esta un poco encimada y queda lejos algunas teclas con las que se combina. Entonces la idea es tener unos atajos de teclado en la pantalla de tu teléfono(proximamente hare la version física con Arduino).
 

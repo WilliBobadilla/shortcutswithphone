@@ -47,13 +47,14 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-6. setear como script principal a app.py
+6. Correr el server con:
 
 ```bash
-FLASK_APP=app.py
+python app.py
 ```
 
-7. Correr el server
+7. En ese momento en la terminal aparecera la ip y el puerto al que debes conectarte en la terminal,
+   entonces te contectas con tu teléfono o tablet a esa ip estando en la misma red
 
 ## License :page_facing_up:
 
